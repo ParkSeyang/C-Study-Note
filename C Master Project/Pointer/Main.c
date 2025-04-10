@@ -403,5 +403,45 @@
 // 마지막으로 swap 함수에서 바꾼값을 main 함수로 반환하는 방법을 생각할수있는데, 함수는 오직 하나의값만을
 // 반환 할수 있으므로 한번의 함수 호출을 통해 두변수의 값을 바꾸는것은 불가능합니다.
 
+// 도전 실전 예제
 
+// void swap(double* pa, double* pb);
+// void line_up(double* maxp, double* midp, double* minp);
+// 
+// int main()
+// {
+//     double max, mid, min;
+// 
+//     printf("실수값 3개 입력 : ");
+//     scanf_s("%lf%lf%lf",&max,&mid,&min);
+//     line_up(&max, &mid, &min);
+//     printf("정렬된 값 출력 : %.1lf, %.1lf, %.1lf\n", max, mid, min);
+// 
+//     return 0;
+// }
+// 
+// void swap(double* pa, double* pb)
+// {
+//     double temp;
+// 
+//     temp = *pa;
+//     *pa = *pb;
+//     *pb = temp;
+// }
+// 
+// void line_up(double* maxp, double* midp, double* minp)
+// {
+//     if (*maxp < *midp)
+//     {
+//         swap(maxp,midp);
+//     }
+//     if (*maxp < *minp)
+//     {
+//         swap(maxp, minp);
+//     }
+//     if (*midp <*minp)
+//     {
+//         swap(midp, minp);
+//     }
+// }
 #pragma endregion
