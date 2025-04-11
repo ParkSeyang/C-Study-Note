@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#pragma region 2개의 함수로 만든 프로그램(함수의 기초)
+#pragma region (2)개의 함수로 만든 프로그램(함수의 기초)
 	// 예제
 // int sum(int x, int y);  // 함수 선언
 // int main()   // main 함수 시작
@@ -23,7 +23,7 @@
 // }                        // sum 함수 종료
 #pragma endregion
 
-#pragma region 확인문제 3번
+#pragma region 확인문제 (3)번
 	// 187cm을 미터 단위로 환산해 출력하는 프로그램이 완성되도록 빈칸을 채우세요.
 	// 단 cm을 m로 환산해 반환하는 함수를 만들고 함수호출을 통해 구현하세요.
 
@@ -48,4 +48,223 @@
 // 	return m;                    // 환산된 값 반환
 // }
 
+#pragma endregion
+
+#pragma region 4가지 키워드로 끝내는 핵심 포인트(함수 기초)
+
+#pragma endregion
+
+#pragma region 함수 기초 확인문제 
+
+#pragma endregion
+
+#pragma region 매개변수가 없는 함수
+
+// int get_num(void);  // 함수 선언
+// 
+// int main()   // main 함수 시작
+// {
+// 	int result;  //  get_num에서 반환값을 받을 변수 선언
+// 
+// 	result = get_num();   // 함수 호출, 반환값을 result 에 저장
+// 	printf("반환값 : %d\n", result);  // 반환값 출력
+//  결과 : (입력값)
+// 	return 0;
+// }
+// 
+// int get_num(void) // 매개변수가 없고 반환형만 있다.
+// {
+// 	int num;      // 키보드의 입력값을 저장할 변수 선언
+// 
+// 	printf("양수 입력 : ");    // 입력 안내 메세지
+// 	scanf_s("%d", &num);      // 키보드 입력
+// 
+// 	while (num < 0)  // 음수가 입력되면 입력 과정 반복
+// 	{
+// 		printf("양수를 입력하세요! \n");
+// 		printf("양수 입력 : ");
+// 		scanf_s("%d", &num);
+// 	}
+// 	return num;               // 입력한 값 반환
+// }
+#pragma endregion
+
+#pragma region 반환값이 없는 함수
+// void print_char(char ch, int count);   // 함수 선언
+// 
+// int main(void)                        // main 함수 시작
+// {
+// 	print_char('@', 5);              // 문자와 숫자를 주고 함수 호출
+// 	결과 : @@@@@
+// 	return 0;
+// }
+// void print_char(char ch, int count)  // 매개변수는 있으나 반환형이 없는 함수
+// {
+// 	int i;
+// 	if (count > 10)
+// 	{
+// 		return;
+// 	}
+// 	for (int i = 0; i < count; i++)  // i는 0부터 count-1까지 증가, 매개변수 int count의 대입값 만큼 만큼 반복
+// 	{
+// 		printf("%c", ch);           // 매개변수 ch 에 받은 문자 출력
+// 	}
+// 	return;
+// }
+
+#pragma endregion
+
+#pragma region 매개변수와 반환값이 모두 없는 함수
+// void print_line(void);   // 함수 선언
+// 
+// int main()
+// {
+// 	print_line();        // 함수 호출
+// 	printf("학번       이름      전공     학점\n");
+// 	print_line();        // 함수 호출
+// 
+// 	return 0;
+// }
+// 
+// void print_line(void)
+// {
+// 	int i;
+// 	for (i = 0; i < 50; i++)   // 50번 반복해서 "-" 출력
+// 	{
+// 		printf("-");
+// 	}
+// 	printf("\n");
+// }
+#pragma endregion
+
+#pragma region 재귀호출 함수
+// void fruit(void);   // 함수 선언
+// 
+// int main()
+// {
+// 	fruit();        // 함수 호출
+// 	
+// 	return 0;
+// }
+// void fruit(void)    // 재귀호출 함수 정의
+// {
+// 	printf("apple\n");
+// 	fruit();        // 자신을 다시 호출
+// }
+// apple 가 출력되다가 종료되는이유
+// 함수는 호출만으로도 일정크기의 메모리를 사용하므로 무한 호출을 하게되면 프로그램 하나가 쓸수있는 메모리(해당 프로세스에 할당된 스택 메모리)
+// 를 모두 사용하게 되어 메모리 부족으로 강제 종료됩니다. 따라서 컴파일러는 컴파일 과정에서 다음과 같은 경고 메세지를 띄워 알려줍니다.
+// Warning C4717 : 'fruit' : 모든 제어 경로에서 재귀적입니다. 함수로 인해 런타임 스택 오버플로우가 발생합니다.
+
+// 수정된 예제
+
+#pragma region 세번만 실행되는 재귀함수 호출
+
+// void fruit(int count);
+// 
+// int main()
+// {
+// 	fruit(1);   // 처음 호출하므로 1을 인수로 준다.
+// 
+// 	return 0;
+// }
+// 
+// void fruit(int count)    // 호출 횟수를 매개변수에 저장
+// {
+// 	printf("Apple\n");
+// 	if (count == 3)      // 호출 횟수가 3이면 반환하고 끝낸다.
+// 	{
+// 		return;  
+// 	}
+// 	fruit(count + 1);    // 재호출할때 호출 횟수를 1증가
+// 	printf("jam\n");
+// }
+// 결과 Apple
+//	    Apple
+//      Apple
+//      jam
+//      jam
+// jam이 두번 출력된이유
+// 재귀 호출 함수의 경우 최초 호출한곳이 아니라 이전에 호출했던곳으로 돌아가기때문이다.
+// 참고사항
+// 재귀 호출의 경우 하나의 함수에서 코드를 반복실행하는듯 하지만 실제로는 새로운함수를 실행하는것과같다.
+// 재귀 호출 함수는 경우에 따라 복잡한 반복문을 간단히 표현할 수 있으나 코드를 읽기가 쉽지않고 반복호출되면서
+// 메모리를 사용하므로 제한적으로 사용하는것이 좋다.
+
+#pragma endregion
+#pragma endregion
+
+#pragma region 5가지 키워드로 끝내는 핵심포인트(함수 심화)
+// 1. 처리할 데이터를 스스로 입력하는 함수에는 매개변수가 없어도된다.
+// 2. 전달받은 데이터를 화면에 출력하는 함수는 반환형을 쓰지 않아도 된다.
+// 3. 같은 내용을 단지 화면에 출력하는 함수는 매개변수와 반환값을 둘다 쓰지 않아도 된다.
+// 4. 매개변수와 반환값이 없을 때 빈 공간은 void를 적어준다.
+// 5. 재귀호출 함수 는 자기 자신을 다시 호출한다.
+
+// 다양한 함수의 형태
+
+// 매개변수가 없는경우
+// ◎선언 int get_num(void); 또는 int get_num();
+// ◎특징 호출할 때 인수 없이 괄호만 사용한다.
+
+// 반환형이 없는 경우
+// ◎선언 void print_char(char ch, int count);
+// ◎특징 반환할 때 return문을 쓰지 않거나 return문만 사용한다.
+//        호출 문장을 수식의 일부로 쓸 수 없다.
+
+// 반환형과 매개변수가 모두 없는 경우
+// ◎선언 void print_line(void);
+// ◎특징 2가지 경우의 특징을 모두 포함한다.
+
+// 재귀호출 함수
+// ◎정의 void fruit() {... fruit(); ...}
+// ◎특징 함수 안에 재귀 호출을 멈추는 조건이 있어야 한다. 그러지않을경우 스택 오버 플로우가 발생한다.
+
+#pragma endregion
+
+#pragma region 함수 심화 확인문제
+// 1. 다음중 함수의 형태(원형)에 따라 옳게 사용 된것을 고르세요
+// ① void func(int,double);
+//   int main(void)
+//   {
+//      func(1.5,10);
+//   }
+// ② int func(void);
+//   int main(void)
+//   {
+//      func(void);
+//   }
+// ③ void func(void);
+//   int main(void)
+//   {
+//     func() + 10;
+//   }
+// ④ int func(double)
+//   int main(void)
+//   {
+//      pritf("%d", func(3.4));
+//   }
+// 정답 은 2번
+
+// 2. main 함수와 실행 결과를 참고해서 1부터 일정수까지의 합을 구하는 sum 함수를 만들고 프로그램을 완성하세요.
+void sum(int num);  // 함수 선언
+int main()
+{
+	sum(10);   // 1부터 10까지의 합 출력
+	sum(100);  // 1부터 100까지의 합출력
+	
+	return 0;
+}
+
+void sum(int num)
+{
+	int i = 0;     // 반복 횟수를 세는 변수와 합을 누적할 변수 정의
+	int result = 0;
+	for (i = 0; i < num; i++) // 1부터 매개변수 까지 증가
+	{
+		result = i;           // 반복해 합을 누적하는 변수에 더한다
+	}
+
+	printf(" 1부터 %d까지의 합은 %d 입니다.\n", );    // 출력
+}
 #pragma endregion
