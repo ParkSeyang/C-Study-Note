@@ -50,7 +50,7 @@
 
 #pragma endregion
 
-#pragma region 4가지 키워드로 끝내는 핵심 포인트(함수 기초)
+#pragma region (4)가지 키워드로 끝내는 핵심 포인트(함수 기초)
 
 #pragma endregion
 
@@ -194,7 +194,7 @@
 #pragma endregion
 #pragma endregion
 
-#pragma region 5가지 키워드로 끝내는 핵심포인트(함수 심화)
+#pragma region (5)가지 키워드로 끝내는 핵심포인트(함수 심화)
 // 1. 처리할 데이터를 스스로 입력하는 함수에는 매개변수가 없어도된다.
 // 2. 전달받은 데이터를 화면에 출력하는 함수는 반환형을 쓰지 않아도 된다.
 // 3. 같은 내용을 단지 화면에 출력하는 함수는 매개변수와 반환값을 둘다 쓰지 않아도 된다.
@@ -247,24 +247,95 @@
 // 정답 은 2번
 
 // 2. main 함수와 실행 결과를 참고해서 1부터 일정수까지의 합을 구하는 sum 함수를 만들고 프로그램을 완성하세요.
-void sum(int num);  // 함수 선언
+// void sum(int num);  // 함수 선언
+// int main()
+// {
+// 	sum(10);   // 1부터 10까지의 합 출력
+// 	sum(100);  // 1부터 100까지의 합 출력
+// 	
+// 	return 0;
+// }
+// 
+// void sum(int num)  // 매개변수에 합을 구할 마지막 값을 받는다.
+// {
+// 	int i = 0;     // 반복 횟수를 세는 변수와 합을 누적할 변수 정의
+// 	int result = 0;
+// 	for (i = 0; i <= num; i++) // 1부터 매개변수 num까지 i 증가
+// 	{
+// 		result += i;           // i만큼 반복해 result(합을 누적하는 변수)에 더한다.
+// 	}
+// 
+// 	printf(" 1부터 %d까지의 합은 %d 입니다.\n", num,result);    // num과 result를 출력한다.
+// 결과 : 1부터 10 까지의 합은 55입니다.
+//      : 1부터 100 까지의 합은 5050입니다.
+// }
+
+// 3. 다음 프로그램의 실행결과를 적으세요. 정답 : 9
+// int func(int n);
+// int poly(int n);
+// 
+// int main()
+// {
+// 	printf("%d\n", func(-3));
+// 	// 결과 : 9
+// 	return 0;
+// }
+// int func(int n)  // 2*n*n + 3*n을 계산한 후에 그 절대값을 구하는함수
+// {
+// 	int res;
+// 	res = poly(n);
+// 	if (res >= 0)
+// 	{
+// 		return res;
+// 	}
+// 	else
+// 	{
+// 		return -res;
+// 	}
+// }
+// int poly(int n)  // 2*n*n + 3*n을 계산해 반환하는 함수
+// {
+// 	return ((2 * n * n) + (3 * n));
+// }
+
+// 도전 실전 예제 
+// 1부터 10까지의 합의 계산(재귀호출 사용)
+
+int rec_func(int n);
+
 int main()
 {
-	sum(10);   // 1부터 10까지의 합 출력
-	sum(100);  // 1부터 100까지의 합출력
-	
+	int sum = 0;
+	sum = rec_func(10);
+
+	printf("1에서부터 10까지의 합 : %d\n", sum);
 	return 0;
 }
-
-void sum(int num)
+// 1번
+// int rec_func(int n)
+// {
+// 	int sum = 0;
+// 	if (n == 0)
+// 	{
+// 		return sum;
+// 	}
+// 	else
+// 	{
+// 		sum = n + rec_func(n - 1);
+// 	}
+// 	
+// 	return sum;
+// }
+// 
+// 2번
+int rec_func(int n)
 {
-	int i = 0;     // 반복 횟수를 세는 변수와 합을 누적할 변수 정의
-	int result = 0;
-	for (i = 0; i < num; i++) // 1부터 매개변수 까지 증가
+	if (n == 0)
 	{
-		result = i;           // 반복해 합을 누적하는 변수에 더한다
+		return n;
 	}
-
-	printf(" 1부터 %d까지의 합은 %d 입니다.\n", );    // 출력
+	n = n + rec_func(n - 1);
+	
+	return n;
 }
 #pragma endregion
