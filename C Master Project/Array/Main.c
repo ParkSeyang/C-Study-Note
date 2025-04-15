@@ -83,7 +83,6 @@
 
 #pragma endregion
 
-
 #pragma region 소수를 구하는 프로그램만들기
 
 // int main(void)
@@ -131,7 +130,6 @@
 
 
 #pragma endregion
-
 
 #pragma region  배열의 개념이해 문제(오류가 나는이유)
 
@@ -220,7 +218,6 @@
 // }
 #pragma endregion
 
-
 #pragma region 상수
 
 //int main(void)
@@ -296,7 +293,6 @@
 
 #pragma endregion
 
-
 #pragma region 생각해볼문제!(배열)
 
 // 문제 (1)
@@ -305,7 +301,6 @@
 //문제 (2)
 //입력 받은 학생들의 성적을 막대 그래프로 나타내는 프로그램을 만들어 보세요.
 #pragma endregion
-
 
 #pragma region 고차원 배열
 // 2차원 배열 예제
@@ -351,4 +346,27 @@
 // 	return 0;
 // }
 
+#pragma endregion
+
+#pragma region 배열의 기초 복습 (배열의 선언과 사용)
+// 5명의 나이를 저장할 배열을 선언하고 사용하는 방법
+int main()
+{
+	int ary[5];               // int형 요소 5개의 배열 선언
+	                          // ary는 array의 축약어
+	ary[0] = 10;              // 첫 번째 배열 요소에 10 대입
+	ary[1] = 20;              // 두 번째 배열 요소에 20 대입
+	ary[2] = ary[0] + ary[1]; // 첫 번째와 두 번째 요소를 더해 세 번째 요소에 저장
+	scanf_s("%d", &ary[3]);   // 키보드로 입력받아 네 번째 요소에 저장
+
+	printf("%d\n", ary[2]);   // 세 번째 배열 요소 출력
+	printf("%d\n", ary[3]);
+	printf("%d\n", ary[4]);   // 마지막 배열 요소는 쓰레기 값
+	/* 결과: 50
+	*        30
+	*        50
+	*       -858993460(쓰레기 값)
+	*/      
+	
+}
 #pragma endregion
