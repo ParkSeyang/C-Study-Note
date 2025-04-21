@@ -46,8 +46,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-04-10T21:23:03.399Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt\\stdio.h",
               "ViewState": "AgIAADwEAAAAAAAAAAAtwEoEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-11T12:01:45.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T12:01:45.916Z"
             },
             {
               "$type": "Document",
@@ -106,7 +104,7 @@
               "RelativeDocumentMoniker": "Array\\Main.c",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-Study-Note\\C Master Project\\Array\\Main.c",
               "RelativeToolTip": "Array\\Main.c",
-              "ViewState": "AgIAALUCAAAAAAAAAAAYwM8CAAACAAAAAAAAAA==",
+              "ViewState": "AgIAANsBAAAAAAAAAAAYwJkCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-04-10T21:26:12.188Z",
               "EditorCaption": ""
