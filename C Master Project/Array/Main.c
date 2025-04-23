@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 #include <string.h> // 문자열에 관련된 함수원형을 모아 놓은 헤더파일
-
+#include <ctype.h>
+#define SIZE 80
 
 #pragma region 배열
 // int main(void)
@@ -954,5 +955,126 @@
 * 1.char 형 배열은 문자열을 저장하는 변수의 역할을 하는 것으로 문자열을 직접 초기화 할 수 있다.
 * 2.char 형 배열에 문자열을 저장할 때는 대입 연산자 대신 strcpy 함수를 사용한다.
 * 3.char 형 배열에 문자열을 입출력 할때는 scanf,gets,printf,puts 등의 함수를 사용한다.
+* 
+* 표로 정리하는 핵심 포인트
+* ※문자열 처리※
+*|      구분         |          사용 예           |             기능
+*| char형 배열 초기화 |    char str[80] = "apple" |  char형 배열은 문자열로 초기화 한다.
+*|                   |                           |  문자열의 끝에는 널 문자가 있다.
+*|-------------------|---------------------------|------------------------------------
+*|    문자열 대입     |   char str[80];           |  문자열 대입은 strcpy 함수를 사용한다.  
+*|                   |   strcpy(str, "apple");   |  str 배열에 문자열 "apple" 저장
+*|-------------------|---------------------------|------------------------------------
+*|                   |   char str[80];           | 
+*|   문자열 입출력    |   scanf("%s",str);        |  scanf 함수는 하나의 단어만 입력
+*|                   |   gets(str);              |  gets 함수는 한 줄 입력
+*|                   |   printf("%s",str);       |  printf 함수는 문자열 출력
+*|                   |   puts(str);              |  puts 함수는 문자열 출력 후 바꿈
 */
+#pragma endregion
+
+#pragma region 확인 문제 (문자열 배열)
+// 1. 다음중 char형 배열이 바르게 초기화된 것은 O 그렇지 않은것은 X를 표시하세요.
+/*
+* ⑴ char str[80] = {'p', 'i', 'g'};   ( O )
+* 올바른 코드인 이유 : 배열 요소의 값이 문자열을 저장하기 공간이 충분하고 배열요소 하나 하나에 문자를 할당해서 올바르게 출력됩니다.
+* 
+* ⑵ char str[] = "elephant";           ( O )
+* 올바른 코드인 이유 : 배열은 배열요소 값을 선언하지않아도 뒤에 하나의 문자열만 선언해도 
+* 자동으로 문자열의 길이에 따라 배열요소의 값을 할당하고 초기화가 가능하기때문에 올바르게 출력됩니다.
+* 
+* ⑶ char str[5] = "apple";             ( X )
+* 잘못된 이유 : 배열 요소에 널문자를 포함한 저장 공간을 할당 하지 않았습니다.
+* 수정한 코드 : char str[6] = "apple"; 
+* 
+* ⑷ char str[2] = {"sun", "moon"};    ( X )
+* 잘못된 이유 : 배열요소의 공간이 부족하고 중괄호 없이 하나의 문자열만 초기화 할수있습니다. 
+* 수정한 코드 : char [4] = {"sun"}; 
+* OR 
+* 두개다 출력하고싶을때 : char str[10] = { "sun" "moon" };
+*/
+
+// 2. 다음중 널 문자의 상수 표현법으로 옳은 것을 고르세요.  
+/*
+* ⑴ NULL
+* ⑵ /0
+* ⑶ '0'
+* ⑷ '\0'
+* 
+* 정답 : ⑷
+*/
+
+// 다음 코드는 2개의 문자열을 입력 받아 위치를 바꾼후 출력합니다. 빈칸을 채워 프로그램을 완성하세요.
+
+// int main()
+// {
+// 	char str1[80], str2[80];
+// 	char temp[80];
+// 
+// 	printf("두 문자열 입력 : ");
+// 	scanf("%s %s", str1, str2);
+// 	printf("바꾸기 전 : %s, %s\n", str1, str2);
+// 	strcpy(temp,str1);                       <- temp에 str1의 문자열 값을 복사해서 넣는다.
+// 	strcpy(str1,str2);                       <- str1에 str2의 문자열 값을 복사해서 넣는다.
+// 	strcpy(str2,temp);                       <- str2에 temp의 문자열 값을 복사해서 넣는다. 
+// 	printf("바꾼후 : %s, %s\n", str1, str2);
+// 
+// 	return 0;
+// }
+// 결과  
+// 두문자 입력 : apple banana <-입력
+// 바꾸기전 : apple, banana
+// 바꾼 후 : banana, apple
+#pragma endregion
+
+#pragma region 도전 실전 예제
+// 대소문자 변환 프로그램
+// 예제를 만들기위한 조건
+// 키보드로 부터 문장을 입력받은 후에 대문자를 찾아 소문자로 바꾸는 프로그램을 작성합니다. 바뀐문장과 바뀐 문자의 수도 함께 출력합니다.
+
+// int main()
+// {
+// 	char str[SIZE];
+// 	int count = 0;
+// 
+// 	printf("문장 입력 : ");
+// 	gets(str);  // fgets(str, sizeof(str), stdin);
+// 
+// 	 for (int i = 0; str[i] != '\0'; i++)  <- 배열요소안의 널 문자 까지 반복하는 반복문
+// 	 {
+// 	 	if ((str[i] >= 'A') && (str[i] <= 'Z'))   
+// 	 	{
+// 	 		str[i] += ('a' - 'A');   
+// 	 		// 아스키 코드 값을 계산한 방법 두번째
+// 	 		// str[i] -= 32;
+// 	 		count++;
+// 	 	}
+// 	 	else if ((str[i] >= 'a') && (str[i] <= 'a'))  
+// 	 	{   
+// 	 		str[i] -= ('a' - 'A');
+// 	 		// 두번째 방법
+// 	 		// str[i] += 32;
+// 	 		count++;
+// 	 	}
+// 	 	
+// 	 }
+// 
+// 	 #include <C type.h> 를 이용한 대소문자 변환 방법
+// 	 for (int i = 0; str[i] != '\0'; i++)
+// 	 {
+// 	 	if (isupper(str[i]))  // 
+// 	 	{
+// 	 		str[i] = tolower(str[i]);  // tolower()은 대문자를 소문자로 변환시켜준다.
+// 	 	}
+// 	 	else if (isupper(str[i]))
+// 	 	{
+// 	    str[i] = toupper(str[i]);   // toupper()은 소문자를 대문자로 변환시켜준다.
+// 	 	}
+// 	 	count++;
+// 	 }
+// 	printf("바뀐 문장 : %s \n",str);
+// 	puts(str);
+// 	printf("바뀐 문자 수 : %d", count);
+// }
+
 #pragma endregion
