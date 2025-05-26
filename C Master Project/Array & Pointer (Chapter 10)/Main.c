@@ -289,27 +289,27 @@
 
 // 크기가 다른 배열을 출력하는 함수
 
-void print_ary(int* pa, int size);             // 함수 선언, 매개변수 2개
-
-int main()
-{
-    int ary1[5] = { 10,20,30,40,50 };         // 배열 요소의 개수가 5개인 배열
-    int ary2[7] = { 10,20,30,40,50,60,70 };   // 배열 요소의 개수가 7개인 배열
-
-    print_ary(ary1, 5);                       // ary1 배열 출력, 배열 요소의 개수 전달
-    printf("\n");
-    print_ary(ary2, 7);                       // ary2 배열 출력, 배열 요소의 개수 전달
-
-    return 0;
-}
-
-void print_ary(int* pa, int size)            // 배열명과 배열 요소의 개수를 받는 매개변수 선언
-{
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", pa[i]);                // size의 값에 따라 반복 횟수 결정
-    }
-}
+// void print_ary(int* pa, int size);             // 함수 선언, 매개변수 2개
+// 
+// int main()
+// {
+//     int ary1[5] = { 10,20,30,40,50 };         // 배열 요소의 개수가 5개인 배열
+//     int ary2[7] = { 10,20,30,40,50,60,70 };   // 배열 요소의 개수가 7개인 배열
+// 
+//     print_ary(ary1, 5);                       // ary1 배열 출력, 배열 요소의 개수 전달
+//     printf("\n");
+//     print_ary(ary2, 7);                       // ary2 배열 출력, 배열 요소의 개수 전달
+// 
+//     return 0;
+// }
+// 
+// void print_ary(int* pa, int size)            // 배열명과 배열 요소의 개수를 받는 매개변수 선언
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         printf("%d ", pa[i]);                // size의 값에 따라 반복 횟수 결정
+//     }
+// }
 
 #pragma endregion
 
@@ -389,6 +389,94 @@ void print_ary(int* pa, int size)            // 배열명과 배열 요소의 개수를 받는
 // 설명 : 1 ~ 45 중에 6개의 서로 다른 수를 배열에 입력하고 출력합니다. 입력한 수가 이미 저장된 수와 같으면  에러 메시지를 출력하고 다시입력합니다.
 // 다음 함수의 선언과 정의를 참고해 빈 부분을 채워 완성합니다.
 
+void input_nums(int* lotto_nums);  // 배열에 로또 번호를 입력하는 함수
+void print_nums(int* lotto_nums);  // 배열에 저장된 값을 출력하는 함수
 
+int main()
+{
+    int lotto_nums[6];  // 로또 번호를 저장할 배열
+
+    input_nums(lotto_nums);
+    print_nums(lotto_nums);
+    return 0;
+}
+
+// void input_nums(int* lotto_nums)
+// {
+//     int dup;
+//     for (int i = 0; i < 6; i++)
+//     {
+//         printf("로또 번호를 입력해주세요 : \n");
+//         scanf_s("%d", &lotto_nums[i]);
+// 
+//         for (int j = 0; j < i; j++)
+//         {
+//             if (lotto_nums[j] == lotto_nums[i])
+//             {
+//                 printf("같은 번호가 있습니다! 다른번호를 입력해주세요 : ");
+//                 scanf_s("%d", &lotto_nums[i]);
+//             }
+// 
+//         }
+// 
+//         if (lotto_nums[i] < 1 || lotto_nums[i] > 45)
+//         {
+//             printf("1~45사이의 숫자만 가능합니다.\n");
+//             i--;
+//             continue;
+//         }
+//     }
+//     
+// }
+
+
+// 풀이 예제
+// void input_nums(int* lotto_nums)
+// {
+//     int num, dup;
+// 
+// 
+//     for (int i = 0; i < 6; i++)
+//     {
+//         printf("번호 입력 : \n");
+//         scanf_s("%d", &num);
+//         dup = 0;
+// 
+//         if (num < 1 || num > 45)
+//         {
+//             printf("1~45사이의 숫자만 가능합니다.\n");
+//             i--;
+//             continue;
+//         }
+// 
+//         for (int j = 0; j < i; j++)
+//         {
+//             if (num == lotto_nums[j])
+//             {
+//                 dup = 1;
+//                 break;
+//             }
+//         }
+//         if (!dup)
+//         {
+//             lotto_nums[i] = num;
+//         }
+//         else
+//         {
+//             printf("같은 번호가 있습니다!\n");
+//             i--;
+//         }
+//     }
+// 
+// }
+
+void print_nums(int* lotto_nums)
+{
+    printf("로또 번호 : ");
+    for (int i = 0; i < 6; i++)
+    {
+        printf("%d ", lotto_nums[i]);
+    }
+}
 
 #pragma endregion
