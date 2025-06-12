@@ -54,8 +54,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-04-10T21:23:03.399Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -65,7 +64,7 @@
               "RelativeDocumentMoniker": "Variable scope \u0026 Data sharing (Chapter 13)\\Variable scope \u0026 Data sharing (Chapter 13).c",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\CStudyNote\\C Master Project\\Variable scope \u0026 Data sharing (Chapter 13)\\Variable scope \u0026 Data sharing (Chapter 13).c",
               "RelativeToolTip": "Variable scope \u0026 Data sharing (Chapter 13)\\Variable scope \u0026 Data sharing (Chapter 13).c",
-              "ViewState": "AgIAAPABAAAAAAAAAAAAAB8CAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJUCAAAAAAAAAAAUwMICAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-27T09:59:41.911Z",
               "EditorCaption": ""
@@ -80,8 +79,7 @@
               "RelativeToolTip": "Array \u0026 Pointer (Chapter 10)\\Main.c",
               "ViewState": "AgIAAGMBAAAAAAAAAAAWwFsBAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-23T12:47:54.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T12:47:54.834Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Function\\Main.c",
               "ViewState": "AgIAAG0BAAAAAAAAAAAWwFgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-10T21:42:14.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T21:42:14.076Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Repeat(ForMoon)\\Main.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-10T21:32:36.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T21:32:36.298Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Pointer\\Main.c",
               "ViewState": "AgIAAAgAAAAAAAAAAAAWwL0BAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-10T21:27:25.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T21:27:25.392Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Array\\Main.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAOgDAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-10T21:26:12.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T21:26:12.188Z"
             }
           ]
         }
