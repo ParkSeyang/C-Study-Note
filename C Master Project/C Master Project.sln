@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array & Pointer (Chapter 10
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Variable scope & Data sharing (Chapter 13)", "Variable scope & Data sharing (Chapter 13)\Variable scope & Data sharing (Chapter 13).vcxproj", "{D0FDF4E8-AB2C-49D6-A3B3-3D8F6347972B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multidimensional Array & Pointer Array (Chapter 14)", "Ch14 Multidimensional Array & Pointer Array\Ch14 Multidimensional Array & Pointer Array.vcxproj", "{741980BC-A274-4C0A-A4AE-38F6CE72F22F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{D0FDF4E8-AB2C-49D6-A3B3-3D8F6347972B}.Release|x64.Build.0 = Release|x64
 		{D0FDF4E8-AB2C-49D6-A3B3-3D8F6347972B}.Release|x86.ActiveCfg = Release|Win32
 		{D0FDF4E8-AB2C-49D6-A3B3-3D8F6347972B}.Release|x86.Build.0 = Release|Win32
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Debug|x64.ActiveCfg = Debug|x64
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Debug|x64.Build.0 = Debug|x64
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Debug|x86.ActiveCfg = Debug|Win32
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Debug|x86.Build.0 = Debug|Win32
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Release|x64.ActiveCfg = Release|x64
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Release|x64.Build.0 = Release|x64
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Release|x86.ActiveCfg = Release|Win32
+		{741980BC-A274-4C0A-A4AE-38F6CE72F22F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

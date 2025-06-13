@@ -704,8 +704,78 @@
 * 
 */
 
-/*
+/* 2. 다음은 키보드로부터 정수를 입력 받은후에 값이 저장된 변수의 주소를 반환하는 함수입니다.
+* 구현에 문제가 있는 부분을 찾고 그이유를 적으세요.
+* int* get_num(void)
+* {
+* 	int n;
+* 	scanf_s("%d", &n);
+* 	return &n;
+* }
 * 
+* 이유 : 지역변수로 주소를 반환하면 함수를벗어날때 지역변수는 초기화되어 주소값이 반환되지못하고 사라집니다.
+* 그러므로 함수안에 지역변수 int n을 static 예약어를 사용하여 static int n 으로 재작성해서 정적 지역변수로 선언해야합니다.
+*/ 
+
+/* 3. 다음 프로그램의 실행결과가 30이 되도록 빈칸에 알맞은 수식을 적으세요.
+* void add_by_pointer(int* pa, int* pb, int* pr)
+* {
+* 	*pr = *pa + *pb;
 * 
+* }
+* int main()
+* {
+* 	int a = 10, b = 20, res = 0;
+* 	add_by_pointer(&a, &b, &res);
+* 	printf("%d", res);
+* 
+* 	return 0;
+* }
+* 
+* 이유 : add_by_pointer 함수는 반환값을 사용하지 않고 포인터에 매개변수를 통해 인수를 받고 결과값도 매개변수 pr를
+* 통해 호출한 함수의 변수 res에 직접 저장합니다.
 */
+
+#pragma endregion
+
+#pragma region 도전 실전 예제!
+
+// 도전! 전역 변수 교환 프로그램
+
+// void input_data(int* pa, int* pb);
+// void swap_data(void);
+// void print_data(int a, int b);
+// 
+// int a, b;
+// 
+// int main(void)
+// {
+// 	input_data(&a, &b);   // 전역 변수에 정수 값 입력
+// 	swap_data();          // 두 변수 교환
+// 	print_data(a, b);     // 교환된 변숫값 출력
+// 
+// 	return 0;
+// }
+// 
+// void input_data(int* pa, int* pb)
+// {
+// 	printf("두 정수 값 입력\n");
+// 	scanf_s("%d %d", pa, pb);
+// }
+// 
+// void swap_data(void)
+// {
+// 	int temp;
+// 	temp = a;
+// 	a = b;
+// 	b = temp;
+// }
+// 
+// void print_data(int a, int b)
+// {
+// 	printf( "두 정수 값 : %d, %d", a, b);
+// }
+
+// 결과 : 입력 -> 10, 20
+// 출력 : 20, 10
 #pragma endregion
